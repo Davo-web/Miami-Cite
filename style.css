@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    background-image: url(./img/Layer\ 43@1\,5x.png);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 24px;
+}
+
+.header-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.tel {
+    cursor: pointer;
+}
+
+.line1, .line2, .line3 {
+    border-radius: 25px;
+    width: 27px;
+    height: 4px;
+    background-color: #FFF;
+    transition: ease-in 0.25s;
+}
+
+.burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.burger:hover {
+    .line1{
+        width: 20px;
+    }
+    .line3{
+        width: 15px;
+    }
+}
+
+.header-title {
+    margin-top: 456px;
+    margin-left: 20px;
+    font-size: 40px;
+    color: #FFF;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    vertical-align: middle;
+}
+
+.header-title::before{
+    content: '';
+    height: 2px;
+    width: 40px;
+    border-radius: 2px;
+    background-color: #FFF;
+    position: absolute;
+    top: 540px;
+}
+
+main {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.startText {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.startText-title {
+    width: 100%;
+    font-size: 36px;
+    color: #000;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    vertical-align: middle;
+}
+
+.startText-title span {
+    color: blue;
+}
+
+.startText-text {
+    color: #000;
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+}
+
+.startText-text div {
+    font-weight: 700;
+    font-size: 20px;
+    color: blue;
+}
+
+.gallery {
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+    width: 100%;
+}
+
+.gallery-title {
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-title::after {
+    content: url(./img/Icon-Corona-virus.svg);
+    position: relative;
+    align-self: center;
+    bottom: 30px;
+    margin-bottom: 56px;
+}
+
+.photos-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-weight: 700;
+}
+
+.photos-img {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.photos-img img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.photos span {
+    color: blue;
+}
+
+.photos-btn {
+    padding: 21px 46px;
+    margin-top: 53px;
+    margin-bottom: 60px;
+    border: #0075FF 2px solid;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    color: #0075FF;
+    font-weight: 700;
+}
+
+.photos-btn:hover {
+    color: #FFF;
+    background-color: #005ECC;
+    box-shadow: 0px 13px 27px 0px #0053B575;
+    transition: ease-in 0.15s;
+}
+
+.testimonials-title{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.testimonials-title_text{
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials-title_text::after{
+    content: url(./img/Icon-Corona-virus.svg);
+    position: relative;
+    align-self: center;
+    bottom: 30px;
+}
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 324px;
+}
+
+.testimonial:nth-of-type(1){
+    height: auto;
+    min-height: 301px;
+}
+
+.testimonial:nth-of-type(2){
+    height: auto;
+    min-height: 328px;
+}
+
+.testimonial:nth-of-type(3){
+    height: auto;
+    min-height: 310px;
+}
+
+.testimonial-name {
+    color: #0075FF;
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 32px;
+}
+
+.testimonial-work {
+    margin-top: 4px;
+    color: #9FADC2;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.testimonial-text {
+    text-align: center;
+    margin-top: 4px;
+    color: #3E3E3E;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.contacts-title_box {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.contacts-title {
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-title::after {
+    content: url(./img/Icon-Corona-virus.svg);
+    position: relative;
+    align-self: center;
+    bottom: 30px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.contacts-text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.contacts-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contacts-phone, .contacts-email {
+    width: 100%;
+    height: auto;
+}
+
+.contacts-phone_title, .contacts-email_title, .contacts-address_title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #9FADC2;
+    margin-bottom: 8px;
+}
+
+.contacts-phone_number, .contacts-email_email, .contacts-adress_address {
+    font-size: 16px;
+    font-weight: 400;
+    color: #3E3E3E;
+}
+
+.contacts-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts-form input, textarea {
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #F6F8FF;
+    border: none;
+    color: #000000;
+    padding: 14px 17px 14px 17px;
+    overflow-wrap: break-word;
+    font: inherit;
+    width: 100%;
+}
+
+.contacts-form textarea{
+    height: 144px;
+    resize: none;
+}
+
+.contacts-form input:hover, .contacts-form textarea:hover{
+    outline: 2px solid #CCD0E0;
+}
+
+.contacts-form input:focus, .contacts-form textarea:focus{
+    outline: 2px solid #0075FF;
+}
+
+.contacts-form input:nth-of-type(3){
+    padding: 14px 17px 110px 17px;
+    margin-bottom: 16px;
+}
+
+.form-btn {
+    background-color: #0075FF;
+    color: #FFFFFF;
+    border: none;
+    padding: 21px 104px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0px 13px 27px 0px #0053B575;
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+}
+
+.form-btn:hover {
+    background-color: #005ECC;
+    transition: ease-in 0.15s;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 200px;
+    background-image: url(./img/image\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+footer img {
+    position: absolute;
+    bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+    .testimonials-title_text::after, .gallery-title::after, .contacts-title::after{
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 330px) {
+    .form-btn {
+        padding: 21px 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-items {
+        margin: 0 40px;
+    }
+    
+    .header-title {
+        margin-left: 40px;
+        font-size: 50px;
+    }
+    
+    main {
+        padding: 80px 40px;
+    }
+
+    .startText {
+        flex-direction: row;
+        gap: 60px;
+    }
+    
+    .startText-title {
+        width: 40%;
+        font-size: 40px;
+    }
+    
+    .startText-text {
+        width: 60%;
+    }
+    
+    .photos-img {
+        flex-direction: row;
+    }
+    
+    .photos-img img {
+        width: 50%;
+        height: 256px;
+    }
+    
+    .testimonials {
+        flex-direction: row;
+        gap: 24px;
+    }
+    
+    .contacts-text {
+        flex-direction: row;
+        gap: 60px;
+    }
+    
+    .contacts-left {
+        width: 50%;
+    }
+    
+    .contacts-address {
+        width: 50%;
+    }
+    
+    .contacts-form {
+        width: 100%;
+    }
+    
+    footer {
+        height: 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .photos-img img {
+        height: 256px;
+    }
+    
+    .header-items {
+        margin: 0 120px;
+    }
+    
+    .header-title {
+        margin-left: 120px;
+        font-size: 70px;
+    }
+    
+    main {
+        padding: 104px 120px;
+    }
+    
+    .startText {
+        gap: 198px;
+    }
+    
+    .startText-title {
+        width: 324px;
+        font-size: 48px;
+    }
+    
+    .startText-text {
+        width: 498px;
+    }
+    
+    .gallery-title, .testimonials-title_text, .contacts-title {
+        font-size: 48px;
+    }
+    
+    .testimonials {
+        gap: 24px;
+    }
+    
+    .testimonial {
+        width: 324px;
+    }
+    
+    .contacts {
+        flex-direction: row;
+        gap: 198px;
+    }
+    
+    .contacts-text {
+        width: 411px;
+        flex-direction: column;
+        gap: 111px;
+    }
+    
+    .contacts-left {
+        width: 100%;
+        flex-direction: row;
+        gap: 111px;
+    }
+    
+    .contacts-phone, .contacts-email {
+        width: 150px;
+    }
+    
+    .contacts-address {
+        width: 100%;
+    }
+    
+    .contacts-form {
+        width: 411px;
+    }
+    
+    .form-btn {
+        width: auto;
+        align-self: flex-start;
+    }
+    
+    footer {
+        height: 359px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .header-items, .header-title {
+        margin-left: 200px;
+    }
+    
+    main {
+        padding: 104px 200px;
+    }
+}
