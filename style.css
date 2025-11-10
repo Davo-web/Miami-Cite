@@ -137,7 +137,7 @@ main {
 }
 
 .gallery-title::after {
-    content: url(./img/Icon-Corona-virus.svg);
+    content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
     bottom: 30px;
@@ -210,7 +210,7 @@ main {
 }
 
 .testimonials-title_text::after{
-    content: url(./img/Icon-Corona-virus.svg);
+    content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
     bottom: 30px;
@@ -272,6 +272,15 @@ main {
     font-weight: 400;
 }
 
+.testimonial-img {
+    transition: transform 0.3s ease; 
+}
+
+.testimonial-img:hover {
+    transform:translateY(-7px);
+}
+
+
 .contacts-title_box {
     margin-top: 60px;
     margin-bottom: 40px;
@@ -289,7 +298,7 @@ main {
 }
 
 .contacts-title::after {
-    content: url(./img/Icon-Corona-virus.svg);
+    content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
     bottom: 30px;
