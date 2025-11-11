@@ -566,7 +566,6 @@ footer img {
     
     .form-btn {
         width: auto;
-        align-self: flex-start;
     }
     
     footer {
@@ -583,3 +582,4 @@ footer img {
         padding: 104px 200px;
     }
 }
+
