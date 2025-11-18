@@ -2,31 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
     <title>Miami</title>
     <link rel="icon" href="./img/Logo_Miami.png">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <button class="back-to-top">
+        ↑
+    </button>
+
+    <div class="burger-menu">
+        <ul>
+            <li><a href="#about_us">About Us</a></li>
+            <li><a href="#gallery">gallery</a></li>
+            <li><a href="#testimonials">testimonials</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+            <li>+1 234 555-55-55</li>
+            <li>call to order</li>
+        </ul>
+    </div>
+
     <header>
         <div class="header-items">
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <img src="./img/Logo_Miami.png" alt="logo">
+            <button type="button" class="burger">
+                <span class="line1 trans"></span>
+                <span class="line2"></span>
+                <span class="line3 trans"></span>
+            </button>
+            <img src="./img/Logo_Miami.png" class="icon" alt="logo">
             <a href="#contacts" ><img class="tel" src="./img/Icon-Phone-call.png" alt="tel"></a>
         </div>
         <p class="header-title">Miami<br>Condo Kings</p>
     </header>
 
     <main>
-        <div class="startText">
+        <div class="startText" id="about_us">
             <div class="startText-title">Miami best<br>Real estate<br><span>here</span></div>
             <div class="startText-text"><div>Over 50 years experience in love.</div><br>Mazel and VA Tsukkerman in his "Analysis of musical works." Pointillism, which originated in the music of the early twentieth century, microforms, found a distant historical.<br><br>The market leader in real estate since 2003. Awards Real Estate Company, 2010, 2011, 2013. More than 200 satisfied customers premium segment. We focus only on new buildings and high-level doskanalno know this area better than other specialists. Working directly with developers - so have more useful information about the profitable deals.<br><br><b>We will never be late!<br>Guaranteed secure transaction - 100%</b></div>
         </div>
-        <div class="gallery">
+        <div class="gallery" id="gallery">
             <p class="gallery-title">Gallery</p>
         </div> 
 
@@ -54,7 +70,7 @@
         
         <button class="photos-btn">View all</button>
 
-        <div class="testimonials-title">
+        <div class="testimonials-title" id="testimonials">
             <p class="testimonials-title_text">Testimonials</p>
         </div>
 
@@ -114,5 +130,7 @@
     <footer>
         <img src="./img/Logo_Miami.png" alt="Miami-logo">
     </footer>
+
+    <script src="./script.js"></script>
 </body>
 </html>
