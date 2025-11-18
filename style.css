@@ -7,11 +7,17 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
     font-family: Roboto, sans-serif;
     overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
@@ -32,6 +38,11 @@ header {
 
 .tel {
     cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.tel:hover {
+    transform:translateY(-3px);
 }
 
 .line1, .line2, .line3 {
@@ -39,24 +50,44 @@ header {
     width: 27px;
     height: 4px;
     background-color: #FFF;
-    transition: ease-in 0.25s;
+    transition: ease-in 0.35s;
 }
 
 .burger {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    transition: ease-in 0.2s;
+    z-index: 2;
 }
 
-.burger:hover {
-    .line1{
-        width: 20px;
-    }
-    .line3{
-        width: 15px;
-    }
+.burger:hover .line1.trans {
+    width: 20px;
 }
+
+.burger:hover .line3.trans {
+    width: 15px;
+}
+
+.burger.trans .line1 {
+    transform: rotate(45deg) translate(6.5px, 5px);
+}
+
+.burger.trans .line3 {
+    transform: rotate(-45deg) translate(6.2px, -5px);
+}
+
+.burger.trans .line2 {
+    opacity: 0;
+}
+
+.burger.trans:hover {
+    transform: rotateZ(-90deg);
+}
+
 
 .header-title {
     margin-top: 456px;
@@ -140,7 +171,7 @@ main {
     content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
-    bottom: 30px;
+    bottom: 20px;
     margin-bottom: 56px;
 }
 
@@ -213,7 +244,7 @@ main {
     content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
-    bottom: 30px;
+    bottom: 20px;
 }
 
 .testimonials {
@@ -301,7 +332,7 @@ main {
     content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
-    bottom: 30px;
+    bottom: 20px;
 }
 
 .contacts {
@@ -416,170 +447,89 @@ footer img {
     bottom: 32px;
 }
 
-@media (max-width: 1024px) {
-    .testimonials-title_text::after, .gallery-title::after, .contacts-title::after{
-        bottom: 20px;
-    }
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 16px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1;
+    opacity: 0;       
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-@media (max-width: 330px) {
-    .form-btn {
-        padding: 21px 20px;
-    }
+.back-to-top.is-visible {
+    opacity: 1;         
+    visibility: visible; 
 }
 
-@media (min-width: 768px) {
-    .header-items {
-        margin: 0 40px;
-    }
-    
-    .header-title {
-        margin-left: 40px;
-        font-size: 50px;
-    }
-    
-    main {
-        padding: 80px 40px;
-    }
-
-    .startText {
-        flex-direction: row;
-        gap: 60px;
-    }
-    
-    .startText-title {
-        width: 40%;
-        font-size: 40px;
-    }
-    
-    .startText-text {
-        width: 60%;
-    }
-    
-    .photos-img {
-        flex-direction: row;
-    }
-    
-    .photos-img img {
-        width: 50%;
-        height: 256px;
-    }
-    
-    .testimonials {
-        flex-direction: row;
-        gap: 24px;
-    }
-    
-    .contacts-text {
-        flex-direction: row;
-        gap: 60px;
-    }
-    
-    .contacts-left {
-        width: 50%;
-    }
-    
-    .contacts-address {
-        width: 50%;
-    }
-    
-    .contacts-form {
-        width: 100%;
-    }
-    
-    footer {
-        height: 300px;
-    }
+.back-to-top:hover {
+    background-color: #545353;
 }
 
-@media (min-width: 1024px) {
-    .photos-img img {
-        height: 256px;
-    }
-    
-    .header-items {
-        margin: 0 120px;
-    }
-    
-    .header-title {
-        margin-left: 120px;
-        font-size: 70px;
-    }
-    
-    main {
-        padding: 104px 120px;
-    }
-    
-    .startText {
-        gap: 198px;
-    }
-    
-    .startText-title {
-        width: 324px;
-        font-size: 48px;
-    }
-    
-    .startText-text {
-        width: 498px;
-    }
-    
-    .gallery-title, .testimonials-title_text, .contacts-title {
-        font-size: 48px;
-    }
-    
-    .testimonials {
-        gap: 24px;
-    }
-    
-    .testimonial {
-        width: 324px;
-    }
-    
-    .contacts {
-        flex-direction: row;
-        gap: 198px;
-    }
-    
-    .contacts-text {
-        width: 411px;
-        flex-direction: column;
-        gap: 111px;
-    }
-    
-    .contacts-left {
-        width: 100%;
-        flex-direction: row;
-        gap: 111px;
-    }
-    
-    .contacts-phone, .contacts-email {
-        width: 150px;
-    }
-    
-    .contacts-address {
-        width: 100%;
-    }
-    
-    .contacts-form {
-        width: 411px;
-    }
-    
-    .form-btn {
-        width: auto;
-    }
-    
-    footer {
-        height: 359px;
-    }
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-@media (min-width: 1440px) {
-    .header-items, .header-title {
-        margin-left: 200px;
-    }
-    
-    main {
-        padding: 104px 200px;
-    }
+li:hover:not(li:nth-of-type(5), li:nth-of-type(6)) {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
+.burger-menu {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0075FF;
+    z-index: 2;
+    padding: 152px 0 0 200px;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.burger-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.burger-menu li {
+    font-weight: 700;
+    font-size: 22px;
+    color: #FFF;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.burger-menu li:nth-of-type(5){
+    margin-top: 50px;
+    position: relative;
+    top: 16px;
+}
+
+.burger-menu.trans {
+    visibility: visible;
+    opacity: 1;
+}
+
+.icon {
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+/* Адаптив */
