@@ -118,7 +118,6 @@ main {
 
 .startText {
     display: flex;
-    flex-direction: column;
     gap: 40px;
     justify-content: center;
     width: 100%;
@@ -193,7 +192,6 @@ main {
 
 .photos-img {
     display: flex;
-    flex-direction: column;
     gap: 24px;
 }
 
@@ -249,7 +247,7 @@ main {
 
 .testimonials {
     display: flex;
-    flex-direction: column;
+
     align-items: center;
     justify-content: center;
     gap: 40px;
@@ -477,11 +475,26 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: fit-content;
 }
 
 li:hover:not(li:nth-of-type(5), li:nth-of-type(6)) {
     text-decoration: underline;
     cursor: pointer;
+}
+
+li:last-child {
+    position: relative;
+}
+
+li:last-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    background-color: #FFF;
+    width: 100%;
+    height: 2px;
 }
 
 .burger-menu {
