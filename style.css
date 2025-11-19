@@ -21,12 +21,13 @@ a {
 }
 
 header {
+    position: relative;
     background-image: url(./img/Layer\ 43@1\,5x.png);
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-top: 24px;
+    padding: 24px 120px;
 }
 
 .header-items {
@@ -90,13 +91,13 @@ header {
 
 
 .header-title {
-    margin-top: 456px;
+    position: absolute;
+    bottom: 80px;
     margin-left: 20px;
-    font-size: 40px;
+    font-size: 80px;
     color: #FFF;
     font-weight: 700;
     letter-spacing: -1.5px;
-    vertical-align: middle;
 }
 
 .header-title::before{
@@ -106,11 +107,12 @@ header {
     border-radius: 2px;
     background-color: #FFF;
     position: absolute;
-    top: 540px;
+    top: -10px;
 }
 
 main {
-    padding: 60px 20px;
+    position: relative;
+    padding: 104px 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,8 +122,6 @@ main {
     display: flex;
     gap: 40px;
     justify-content: center;
-    width: 100%;
-    max-width: 1200px;
 }
 
 .startText-title {
@@ -153,9 +153,8 @@ main {
 
 .gallery {
     display: flex;
-    margin-top: 60px;
+    margin-top: 104px;
     justify-content: center;
-    width: 100%;
 }
 
 .gallery-title {
@@ -170,16 +169,14 @@ main {
     content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
-    bottom: 20px;
-    margin-bottom: 56px;
+    bottom: 10px;
+    margin-bottom: 23px;
 }
 
 .photos-box {
     display: flex;
     justify-content: center;
     gap: 40px;
-    width: 100%;
-    max-width: 1200px;
 }
 
 .photos {
@@ -195,7 +192,6 @@ main {
 }
 
 .photos-img img {
-    width: 100%;
     height: 260px;
     object-fit: cover;
 }
@@ -207,7 +203,7 @@ main {
 .photos-btn {
     padding: 21px 46px;
     margin-top: 53px;
-    margin-bottom: 60px;
+    margin-bottom: 104px;
     border: #0075FF 2px solid;
     border-radius: 8px;
     background: none;
@@ -226,7 +222,6 @@ main {
 .testimonials-title{
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .testimonials-title_text{
@@ -241,17 +236,14 @@ main {
     content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
-    bottom: 20px;
+    bottom: 10px;
 }
 
 .testimonials {
     display: flex;
-
     align-items: center;
     justify-content: center;
     gap: 40px;
-    width: 100%;
-    max-width: 1200px;
 }
 
 .testimonial {
@@ -259,23 +251,21 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 324px;
 }
 
 .testimonial:nth-of-type(1){
-    height: auto;
-    min-height: 301px;
+    width: 324px;
+    height: 301px;
 }
 
 .testimonial:nth-of-type(2){
-    height: auto;
-    min-height: 328px;
+    width: 324px;
+    height: 328px;
 }
 
 .testimonial:nth-of-type(3){
-    height: auto;
-    min-height: 310px;
+    width: 324px;
+    height: 310px;
 }
 
 .testimonial-name {
@@ -310,11 +300,10 @@ main {
 
 
 .contacts-title_box {
-    margin-top: 60px;
+    margin-top: 104px;
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .contacts-title {
@@ -329,16 +318,14 @@ main {
     content: url(./img/Icon-Corona-virus.png);
     position: relative;
     align-self: center;
-    bottom: 20px;
+    bottom: 10px;
 }
 
 .contacts {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 60px;
     width: 100%;
-    max-width: 1200px;
 }
 
 .contacts-text {
@@ -355,7 +342,6 @@ main {
 }
 
 .contacts-phone, .contacts-email {
-    width: 100%;
     height: auto;
 }
 
@@ -388,7 +374,6 @@ main {
     padding: 14px 17px 14px 17px;
     overflow-wrap: break-word;
     font: inherit;
-    width: 100%;
 }
 
 .contacts-form textarea{
@@ -410,6 +395,7 @@ main {
 }
 
 .form-btn {
+    margin-top: 16px;
     background-color: #0075FF;
     color: #FFFFFF;
     border: none;
@@ -419,7 +405,6 @@ main {
     font-weight: 700;
     box-shadow: 0px 13px 27px 0px #0053B575;
     width: 100%;
-    max-width: 300px;
     align-self: center;
 }
 
@@ -429,6 +414,7 @@ main {
 }
 
 footer {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -545,4 +531,3 @@ li:last-child::after {
 
 
 /* Адаптив */
-
