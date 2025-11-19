@@ -176,7 +176,6 @@ main {
 
 .photos-box {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 40px;
     width: 100%;
@@ -546,3 +545,4 @@ li:last-child::after {
 
 
 /* Адаптив */
+
