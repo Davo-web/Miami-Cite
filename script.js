@@ -21,13 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const line3 = document.querySelector(".line3");
     const burgerMenu = document.querySelector(".burger-menu");
 
-
-
-    burger.addEventListener("click", function() {
+    function ClassToggle(){
         burger.classList.toggle('trans');
         line1.classList.toggle('trans');
         line3.classList.toggle('trans');
         burgerMenu.classList.toggle('trans');
+    }
+
+    burger.addEventListener("click", function() {
+        ClassToggle();
 
         if (burgerMenu.classList.contains('trans')) {
             document.body.style.overflow = 'hidden';
@@ -42,10 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     links.forEach(link => {
         link.addEventListener("click", function(){
-            burger.classList.toggle('trans');
-            line1.classList.toggle('trans');
-            line3.classList.toggle('trans');
-            burgerMenu.classList.toggle('trans');
+            ClassToggle();
             if (burgerMenu.classList.contains('trans')) {
             document.body.style.overflow = 'hidden';
             document.documentElement.style.background = '#0075FF';
@@ -56,4 +55,3 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 });
-
