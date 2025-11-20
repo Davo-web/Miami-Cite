@@ -643,6 +643,11 @@ li:last-child::after {
     }
 }
 @media (max-width: 400px){
+    .onepic, .twopic, .threepic {
+        width: 35vw;
+        height: 35vw;
+        object-fit: cover;
+    }
     .header-title{
         font-size: 40px;
     }
@@ -667,3 +672,4 @@ li:last-child::after {
     }
 
 }
+
