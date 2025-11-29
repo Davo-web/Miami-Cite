@@ -6,8 +6,11 @@
 }
 
 html {
+    position: relative;
+    transition: background 0.3s ease-in-out;
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable; 
+    /* резервирует место для полосы прокрутки, даже если она не видна, предотвращая смещение макета при её появлении */
 }
 
 body {
@@ -53,7 +56,7 @@ header {
 }
 
 .burger {
-    background-color: transparent;
+    background-color: transparent; /* фон полностью прозрачный */
     border: none;
     cursor: pointer;
     display: flex;
@@ -348,7 +351,7 @@ main {
     gap: 16px;
 }
 
-.contacts-form input, textarea {
+.contacts-form input, .contacts-form textarea {
     font-size: 14px;
     border-radius: 8px;
     background-color: #F6F8FF;
@@ -359,9 +362,10 @@ main {
     font: inherit;
 }
 
+
 .contacts-form textarea{
     height: 144px;
-    resize: none;
+    resize: none; 
 }
 
 .contacts-form input:focus, .contacts-form textarea:focus{
@@ -498,7 +502,69 @@ li:last-child::after {
     top: 10px;
 }
 
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 20px 20px 20px;
+    background-color: #0075FF;
+    border-radius: 30px;
+    width: 400px;     
+    height: 300px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.modal-content_btn {
+    background-color: #FFF;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 18px;
+    border-radius: 10px;
+}
+
+html::before {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+}
+
+html.show::before {
+    visibility: visible;
+    opacity: 100;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
 
 
@@ -522,39 +588,39 @@ li:last-child::after {
 }
 @media (min-width: 1024px) {
     .tel:hover {
-    transform:translateY(-3px);
+        transform:translateY(-3px);
     }
     .burger.trans:hover {
-    transform: rotateZ(-90deg);
+        transform: rotateZ(-90deg);
     }
     .burger:hover .line1.trans {
-    width: 20px;
+        width: 20px;
     }
     .burger:hover .line3.trans {
-    width: 15px;
+        width: 15px;
     }
     .photos-btn:hover {
-    color: #FFF;
-    background-color: #005ECC;
-    box-shadow: 0px 13px 27px 0px #0053B575;
-    transition: ease-in 0.15s;
+        color: #FFF;
+        background-color: #005ECC;
+        box-shadow: 0px 13px 27px 0px #0053B575;
+        transition: ease-in 0.15s;
     }
     .testimonial-img:hover {
-    transform:translateY(-7px);
+        transform:translateY(-7px);
     }
     .contacts-form input:hover, .contacts-form textarea:hover{
-    outline: 2px solid #CCD0E0;
+        outline: 2px solid #CCD0E0;
     }
     .form-btn:hover {
-    background-color: #005ECC;
-    transition: ease-in 0.15s;
+        background-color: #005ECC;
+        transition: ease-in 0.15s;
     }
     .back-to-top:hover {
-    background-color: #545353;
+        background-color: #545353;
     }
     .contacts-form input:focus, .contacts-form textarea:focus{
-    outline: 2px solid #0075FF;
-}
+        outline: 2px solid #0075FF;
+    }
 }
 @media (max-width: 1024px){
     .photos img {
@@ -573,17 +639,22 @@ li:last-child::after {
         padding: 152px 0 0 150px;
     }
     .photos-btn:active {
-    color: #FFF;
-    background-color: #005ECC;
-    box-shadow: 0px 13px 27px 0px #0053B575;
-    transition: ease-in-out 0.1s;
+        color: #FFF;
+        background-color: #005ECC;
+        box-shadow: 0px 13px 27px 0px #0053B575;
+        transition: ease-in-out 0.1s;
     }
     .form-btn:active {
-    background-color: #005ECC;
-    transition: ease-in-out 0.1s;
+        background-color: #005ECC;
+        transition: ease-in-out 0.1s;
     }
 }
 @media (max-width: 830px){
+    .modal-content {
+        padding: 70px 20px 20px 20px;
+        width: 350px;     
+        height: 250px;
+    }
     .startText {
         flex-direction: column;
     }
@@ -631,6 +702,11 @@ li:last-child::after {
     }
 }
 @media (max-width: 500px){
+    .modal-content {
+        padding: 40px 20px 20px 20px;
+        width: 320px;     
+        height: 220px;
+    }
     main {
         padding: 104px 70px;
     }
