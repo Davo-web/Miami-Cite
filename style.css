@@ -178,6 +178,10 @@ main {
     gap: 24px;
 }
 
+.photos-img img {
+    border-radius: 8px;
+}
+
 .onepic {
     width: 48vw;
     height: 21vw;
@@ -523,7 +527,8 @@ li:last-child::after {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 120px 20px 20px 20px;
+    padding: 25px;
+    gap: 30px;
     background-color: #0075FF;
     border-radius: 30px;
     width: 400px;     
@@ -532,17 +537,21 @@ li:last-child::after {
     font-size: 25px;
     font-weight: 700;
     color: #FFFFFF;
+    box-shadow: 0px 0px 90px 15px rgba(0,0,0,0.45);
 }
 
 .modal-content_btn {
-    background-color: #FFF;
+    background-color: #ffffff;
+    color: #0075FF;
     border: none;
     cursor: pointer;
-    color: #000;
     font-size: 16px;
+    font-weight: 600;
     padding: 10px 18px;
     border-radius: 10px;
+    transition: background 0.2s ease-in-out;
 }
+
 
 html::before {
     visibility: hidden;
@@ -556,7 +565,7 @@ html::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 3;
 }
 
@@ -564,6 +573,18 @@ html.show::before {
     visibility: visible;
     opacity: 100;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.img-btn {
+    display: none;
+}
+
+.photo-btn {
+    display: none;
+}
+
+.hide {
+    display: none;
 }
 
 
@@ -618,6 +639,9 @@ html.show::before {
     .back-to-top:hover {
         background-color: #545353;
     }
+    .modal-content_btn:hover{
+        background-color: #eee6e6;
+    }
     .contacts-form input:focus, .contacts-form textarea:focus{
         outline: 2px solid #0075FF;
     }
@@ -651,9 +675,13 @@ html.show::before {
 }
 @media (max-width: 830px){
     .modal-content {
-        padding: 70px 20px 20px 20px;
+        padding: 20px;
+        gap: 10px;
         width: 350px;     
         height: 250px;
+    }
+    .modal-content img {
+        width: 125px;
     }
     .startText {
         flex-direction: column;
@@ -703,9 +731,18 @@ html.show::before {
 }
 @media (max-width: 500px){
     .modal-content {
-        padding: 40px 20px 20px 20px;
+        font-size: 20px;
+        padding: 10px;
+        gap: 5px;
         width: 320px;     
         height: 220px;
+    }
+    .modal-content_btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .modal-content img {
+        width: 120px;
     }
     main {
         padding: 104px 70px;
