@@ -1,4 +1,4 @@
-![Miami Logo](./img/Logo_Miami.png)
+![Miami Logo](./img/image_1.png)
 # 🌴 Miami Condo Kings — лендинг о недвижимости в Майами
 
 Этот проект — адаптивный одностраничный лендинг, созданный для демонстрации агентства недвижимости «Miami Condo Kings».  
