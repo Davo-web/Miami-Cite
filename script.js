@@ -16,12 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    const burger = document.querySelector(".burger");
+    const burger = document.querySelector(".burger"); // контейнер бургера-меню
     const line1 = document.querySelector(".line1");
     const line3 = document.querySelector(".line3");
-    const burgerMenu = document.querySelector(".burger-menu");
+    const burgerMenu = document.querySelector(".burger-menu"); // меню, которое будет открываться по нажатии на бургер
 
-    function ClassToggle(){ //  убираем/добавляем класс trans
+    function ClassToggle(){ 
+        //  убираем/добавляем класс trans
         burger.classList.toggle('trans');
         line1.classList.toggle('trans');
         line3.classList.toggle('trans');
@@ -45,11 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
         StylesMenu();
     });
     
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function(e) { 
+        // закрытие меню по нажатию на esc
         if (e.key == 'Escape' && burgerMenu.classList.contains('trans')) {
             StylesMenu();
         }
     });
+
+
 
     const links = document.querySelectorAll('.burger-menu a');
 
@@ -58,9 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
             StylesMenu();
         })
     })
-
-
 });
+
+
 
 document.getElementById('form').addEventListener("submit", function(e){
     e.preventDefault();
@@ -89,6 +93,7 @@ document.getElementById('form').addEventListener("submit", function(e){
         
         isValued = false;
     }
+    
     errorRemove();
     function errorRemove(){
         document.querySelectorAll('.error').forEach(i => i.remove());
@@ -101,9 +106,8 @@ document.getElementById('form').addEventListener("submit", function(e){
     if(!message.value.trim()) showError("Enter a message", message);
 
 
-    document.documentElement.classList.remove('show');
     if(isValued){
-        document.documentElement.classList.add('show');
+        document.documentElement.classList.add('show'); // для стилизации псевдоэлемента (затемнении, при модальном окне)
         const modal = document.querySelector('.modal');
         const htmlBefore = document.querySelector('.show');
         const modalBtn = document.querySelector('.modal-content_btn');
@@ -116,7 +120,8 @@ document.getElementById('form').addEventListener("submit", function(e){
         modal.style.opacity = "1";
         
         
-        modalBtn.addEventListener('click', function() {
+        modalBtn.addEventListener('click', function() { 
+            // при закрытии модального окна - затемнение сайта уходит (псевдоэлемент теряет стили)
             document.documentElement.classList.remove('show');
 
             modal.style.visibility = "hidden";
@@ -124,7 +129,36 @@ document.getElementById('form').addEventListener("submit", function(e){
         })
         document.getElementById('form').reset();
     }
-
-    
 })
 
+const photosBtn = document.querySelector('.seen'); // кнопка показать больше
+const photosBtn2 = document.querySelector('.hide'); // закрыть
+const photosImg = document.querySelectorAll('.photos-img');
+const photosTitle = document.querySelectorAll('.photos-title');
+const lastPhotosImg = Array.from(photosImg).slice(-2); 
+// из всех фоток берём последние 2 (добавленные первой кнопкой) и записываем в массив
+const lastPhotosTitle = Array.from(photosTitle).slice(-2); // из всех подписей фоток также берем последние 2
+
+photosBtn.addEventListener("click", function () {
+    photosBtn.style.display = 'none';
+    photosBtn2.style.display = 'block';
+    
+    lastPhotosImg.forEach(el => {
+        el.classList.remove('img-btn');
+    })
+    lastPhotosTitle.forEach(el => {
+        el.classList.remove('photo-btn');
+    })
+})
+
+photosBtn2.addEventListener("click", function () {
+    photosBtn.style.display = 'block';
+    photosBtn2.style.display = 'none';
+
+    lastPhotosImg.forEach(el => {
+        el.classList.add('img-btn');
+    })
+    lastPhotosTitle.forEach(el => {
+        el.classList.add('photo-btn');
+    })
+})
